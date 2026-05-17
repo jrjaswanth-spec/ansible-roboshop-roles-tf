@@ -11,11 +11,11 @@
 
     - name: install mysql python libraries
       ansible.builtin.pip:
-      executable: pip3.9
-      name: "{{ item }}"
+        name: "{{ item }}"
+        executable: pip3.9
       loop:
-       - botocore
-       - boto3
+        - botocore
+        - boto3
 
      
 
