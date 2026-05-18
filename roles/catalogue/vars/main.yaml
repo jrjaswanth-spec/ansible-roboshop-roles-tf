@@ -1,1 +1,1 @@
-MONGODB_HOST: mongodb.jrdaws.life
+MONGODB_HOST: mongodb-{{ env }}.jrdaws.life
