@@ -16,6 +16,10 @@
   - cryptography
   - PyMySQL
 
+- name: debug mysql password
+  ansible.builtin.debug:
+    msg: "{{ MYSQL_ROOT_PASSWORD }}"
+
 - name: import shipping data into mysql
   community.mysql.mysql_db:
     state: import
