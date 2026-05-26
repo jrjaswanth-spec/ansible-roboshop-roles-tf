@@ -1,9 +1,9 @@
 MONGODB_HOST: mongodb-{{ env }}.jrdaws.life # mongodb-dev.jrdaws.life
 REDIS_HOST: redis-{{ env }}.jrdaws.life
-CATALOGUE_HOST: catalogue-{{ env }}.jrdaws.life
-CART_HOST: cart-{{ env }}.jrdaws.life
+CATALOGUE_HOST: catalogue.backend-alb-{{ env }}.jrdaws.life
+CART_HOST: cart.backend-alb-{{ env }}.jrdaws.life
 MYSQL_HOST: mysql-{{ env }}.jrdaws.life
-USER_HOST: user-{{ env }}.jrdaws.life
+USER_HOST: user.backend-alb-{{ env }}.jrdaws.life
 RABBITMQ_HOST: rabbitmq-{{ env }}.jrdaws.life
-SHIPPING_HOST: shipping-{{ env }}.jrdaws.life
-PAYMENT_HOST: payment-{{ env }}.jrdaws.life
+SHIPPING_HOST: shipping.backend-alb-{{ env }}.jrdaws.life
+PAYMENT_HOST: payment.backend-alb-{{ env }}.jrdaws.life
