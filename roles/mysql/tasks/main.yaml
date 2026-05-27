@@ -9,6 +9,16 @@
         state: started
         enabled: yes   
 
+    - name: Create remote root access
+      community.mysql.mysql_user:
+        name: root
+        host: "%"
+        password: "{{ mysql_root_password }}"
+        priv: "*.*:ALL,GRANT"
+        plugin: mysql_native_password
+        state: present
+        login_unix_socket: /var/lib/mysql/mysql.sock    
+
     - name: install mysql python libraries
       ansible.builtin.pip:
         name: "{{ item }}"
