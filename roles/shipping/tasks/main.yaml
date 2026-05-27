@@ -28,7 +28,6 @@
     login_user: "{{ MYSQL_ROOT_USER }}"
     login_password: "{{ MYSQL_ROOT_PASSWORD }}"
     target: "{{ item }}"
-  become: false
   loop:
   - /app/db/schema.sql
   - /app/db/app-user.sql 
