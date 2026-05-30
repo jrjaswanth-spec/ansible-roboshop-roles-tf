@@ -16,7 +16,7 @@
   loop:
   - botocore
   - boto3
-
+  - PyMySQL
 
 - name: Create remote root access
   community.mysql.mysql_user:
