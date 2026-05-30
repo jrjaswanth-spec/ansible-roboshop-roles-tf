@@ -8,6 +8,14 @@
     name: mysqld
     state: started
     enabled: yes
+    
+- name: install mysql python libraries
+  ansible.builtin.pip:
+    executable: pip3.9
+    name: "{{ item }}"
+  loop:
+  - botocore
+  - boto3
 
 
 - name: Create remote root access
@@ -18,15 +26,7 @@
     priv: "*.*:ALL,GRANT"
     plugin: mysql_native_password
     state: present
-    login_unix_socket: /var/lib/mysql/mysql.sock    
-
-- name: install mysql python libraries
-  ansible.builtin.pip:
-    executable: pip3.9
-    name: "{{ item }}"
-  loop:
-  - botocore
-  - boto3
+    login_unix_socket: /var/lib/mysql/mysql.sock
 
 - name: setup root password
   ansible.builtin.command: mysql_secure_installation --set-root-pass {{ MYSQL_ROOT_PASSWORD }}
